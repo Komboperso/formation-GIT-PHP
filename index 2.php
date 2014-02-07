@@ -38,7 +38,7 @@
             <?php echo $variable_calcul1 + $variable_calcul2 ?>
             <?php echo 'test'; ?>
             
-            
+            Ajout de commentaire 2 sur la branche principale
         </p>
     </body>
 </html>
