@@ -7,8 +7,28 @@
     <body>
         <h2>Affichage de la page secret</h2>
         
- 
-            
+       <p>
+       
+
+      <?php 
+      
+    
+if (isset($_POST['pass']) AND $_POST['pass']  == "kangourou")
+     {
+     echo "OUI </br> Vous avez saisi le bon mot de passe";
+     }
+
+else
+	{
+	echo "NON NON et NON </br>votre mot de pass est incorect <a href='formulaire.php'>retour</a>" ;  	 	
+	}
+   	 	
+      ?>
+
+       	 
+       	 
+       	 
+       	 
         </p>
     </body>
 </html>
