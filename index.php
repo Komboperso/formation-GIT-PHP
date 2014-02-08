@@ -32,7 +32,7 @@
             
             <?php echo ?>
             
-            
+            Ajout de text sur branche principale
             
             <?php $variable_calcul1 = 100.5; ?>
             <?php $variable_calcul2 = (5+3)/2; ?>
