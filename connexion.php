@@ -1,29 +1,37 @@
-<?php 
+
+
+
+
+
+<?php
 try
 {
-	&bdd = new PDO('mysql:host=localhost;dbname=test', 'root', '');
+	// On se connecte à MySQL
+	$bdd = new PDO('mysql:host=localhost;dbname=test', 'root', 'LEloBA42');
 }
-
-catch (exeption $e)
+catch(Exception $e)
 {
-die('erreur : ' . $e->getMessage()):
+	// En cas d'erreur, on affiche un message et on arrête tout
+        die('Erreur : '.$e->getMessage());
 }
 
+// Si tout va bien, on peut continuer
 
-$reponse = $bdd->query(SELECT * FROM jeux_video');
+// On récupère tout le contenu de la table jeux_video
+$reponse = $bdd->query('SELECT nom, possesseur, console, prix FROM jeux_video WHERE console=\'Xbox\' OR console=\'PS2\' ORDER BY prix DESC LIMIT 0,10')or die(print_r($bdd->errorInfo())) ;;
 
 
+
+// On affiche chaque entrée une à une
 while ($donnees = $reponse->fetch())
 {
-	?>
-	
-	<strong> jeux Videos </strong>
-	<?php echo $donnees['nom']; ?>
-	
-	
-	<?php
+?>
+    <p>
+    <strong>Jeu</strong> : <?php echo $donnees['nom']; ?><br />
+
+    <?php
 }
 
-$reponse->closeCursor();
+$reponse->closeCursor(); // Termine le traitement de la requête
+
 ?>
- 
