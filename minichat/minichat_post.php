@@ -21,8 +21,8 @@ catch (Exception $e)
 }
 ?>
 
-
-header('Location:minichat.php')
+<? 
+$req=$bdd->prepare(INSERT INTO
 
 
 <head>
